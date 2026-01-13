@@ -10,6 +10,11 @@
   - Safety rules and electrical concepts
 - Update PIN_MAPPING.md with detailed component requirements
 - Update PIN_MAPPING_FR.md with detailed component requirements
+## [0.1.2] - 2026-01-13
+- Enable PSRAM on ESP32-S3 N16R8 via build flags and OPI PSRAM setting
+
+## [0.1.1] - 2026-01-13
+- Force PSRAM initialization on ESP32-S3 N16R8 and log status at boot
 
 ## [0.1.0] - 2026-01-12
 - Add multi-environment template for ESP32 DevKit and ESP32-S3 DevKitC-1

@@ -9,6 +9,7 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_ST7789.h>
 #include <Adafruit_NeoPixel.h>
+#include <esp32-hal-psram.h>
 
 #include "board_config.h"
 #include "config.h"
@@ -96,6 +97,18 @@ void initBacklight() {
   ledcSetup(kLedcChannel, 5000, kLedcResolution);
   ledcAttachPin(DISPLAY_BL_PIN, kLedcChannel);
   ledcWrite(kLedcChannel, kTemplateConfig.backlightLevel);
+}
+
+void initPsram() {
+  #if defined(ENV_ESP32S3_N16R8)
+  if (!psramInit()) {
+    Serial.println("[PSRAM] Init failed or PSRAM not detected.");
+    return;
+  }
+  const size_t total = ESP.getPsramSize();
+  const size_t free = ESP.getFreePsram();
+  Serial.printf("[PSRAM] Enabled: %u / %u bytes free.\n", static_cast<unsigned>(free), static_cast<unsigned>(total));
+  #endif
 }
 
 void drawBootScreen(const char* message, uint8_t percent) {
@@ -415,6 +428,7 @@ void setupButtons() {
 
 void setup() {
   Serial.begin(115200);
+  initPsram();
   setupButtons();
   setupDisplay();
   setupNeoPixel();
