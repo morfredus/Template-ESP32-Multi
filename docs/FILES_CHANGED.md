@@ -1,23 +1,43 @@
-# 📝 Files Modified and Created (v0.3.0)
+# 📝 Files Modified and Created
 
-**Date**: January 13, 2026  
-**Version**: 0.3.0
+**Last Updated**: January 13, 2026  
+**Version**: 0.3.2
 
 ---
 
 ## 📊 Changes Summary
 
-| Type | Count | Total Lines |
-|------|-------|-------------|
-| **Headers created** | 10 | ~8,500 |
-| **Source created** | 10 | ~814 |
-| **Files modified** | 3 | - |
-| **Documentation created** | 5 | ~2,000 |
-| **TOTAL** | 28 | ~11,314 |
+| Type | v0.3.0 | v0.3.2 | Total |
+|------|--------|--------|-------|
+| **Headers created** | 10 | +1 | **11** |
+| **Source created** | 10 | +1 | **11** |
+| **Files modified** | 3 | +2 | **5** |
+| **Documentation created** | 5 | +2 | **7** |
+| **TOTAL** | 28 | +6 | **34** |
 
 ---
 
-## ✨ Files CREATED
+## ✨ New Files (v0.3.2)
+
+### Patch #001 - Secure Wrapper for secrets.h
+
+| File | Lines | Description |
+|------|-------|-------------|
+| `include/secrets_wrapper.h` | 19 | Secure credential access interface |
+| `src/secrets_wrapper.cpp` | 27 | Wrapper implementation (only includes secrets.h) |
+| `docs/PATCH_001_SECRETS_WRAPPER.md` | 207 | Complete patch documentation (English) |
+| `docs/PATCH_001_SECRETS_WRAPPER_FR.md` | 207 | Complete patch documentation (French) |
+
+### Modifications (v0.3.2)
+
+| File | Change | Description |
+|------|--------|-------------|
+| `src/main.cpp` | -1 line | Remove secrets.h include |
+| `src/network.cpp` | +2/-10 lines | Use wrapper API instead of direct access |
+
+---
+
+## 📋 Files v0.3.0 (Modular Refactoring)
 
 ### Headers (include/)
 

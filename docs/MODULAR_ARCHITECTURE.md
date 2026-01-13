@@ -1,6 +1,6 @@
 # 🎯 Modular Refactoring - Summary
 
-**Version**: 0.3.0  
+**Version**: 0.3.2  
 **Date**: January 13, 2026  
 **Status**: ✅ COMPLETED
 
@@ -31,8 +31,9 @@ Code has been completely refactored to move from **1 monolithic file** (`main.cp
 | **buttons** | User input | 63 |
 | **ui_state** | Global state management | 20 |
 | **psram** | Memory initialization | 35 |
+| **secrets_wrapper** | Secure credential access | 27 |
 | **main** | Orchestration | 70 |
-| **TOTAL** | - | **814** |
+| **TOTAL** | - | **841** |
 
 ---
 

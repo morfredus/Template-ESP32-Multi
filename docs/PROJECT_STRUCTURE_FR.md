@@ -30,12 +30,10 @@
 │   ├── config.h                # Paramètres utilisateur
 │   ├── board_config.h          # Définitions GPIO (spécifique environnement)
 │   ├── secrets.h               # Identifiants WiFi (créé par utilisateur, ignoré)
-│   ├── secrets_example.h       # Modèle WiFi (ne pas éditer)
-│   └── [autres headers]
+│   ├── secrets_example.h       # Modèle WiFi (ne pas éditer)│   ├── secrets_wrapper.h       # API sécurisée pour accès aux credentials│   └── [autres headers]
 │
 ├── src/
-│   ├── main.cpp                # Point d'entrée (setup, loop)
-│   └── [modules feature]       # Fichiers .cpp additionnels
+│   ├── main.cpp                # Point d'entrée (setup, loop)│   ├── secrets_wrapper.cpp     # Wrapper sécurisé (seul fichier incluant secrets.h)│   └── [modules feature]       # Fichiers .cpp additionnels
 │
 ├── lib/
 │   └── README                  # Placeholder librairies locales
@@ -82,6 +80,9 @@ Toutes références GPIO viennent d'ici. Mettre à jour docs après changements.
 ### include/secrets.h
 **Git-ignoré** (voir `.gitignore`). L'utilisateur crée en dupliquant `secrets_example.h`.
 Contient réseaux WiFi (paires SSID/mot-de-passe). Ne jamais commiter.
+
+**Important**: Depuis v0.3.2, ce fichier doit UNIQUEMENT être inclus par `secrets_wrapper.cpp`.
+Les autres fichiers doivent utiliser l'API de `secrets_wrapper.h` pour accéder aux credentials de manière sécurisée.
 
 ### src/main.cpp
 **Point d'entrée**. Contient :

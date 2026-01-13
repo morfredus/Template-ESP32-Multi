@@ -1,6 +1,6 @@
 #include "network.h"
 #include "config.h"
-#include "secrets.h"
+#include "secrets_wrapper.h"
 #include "tft_display.h"
 #include <WiFi.h>
 #include <WiFiMulti.h>
@@ -12,9 +12,9 @@ namespace Network {
 static WiFiMulti wifiMulti;
 
 void addWifiNetworks() {
-  constexpr size_t wifiCount = sizeof(WIFI_NETWORKS) / sizeof(WIFI_NETWORKS[0]);
+  const size_t wifiCount = getWifiNetworksCount();
   for (size_t i = 0; i < wifiCount; ++i) {
-    wifiMulti.addAP(WIFI_NETWORKS[i][0], WIFI_NETWORKS[i][1]);
+    wifiMulti.addAP(getWifiSsid(i), getWifiPassword(i));
   }
 }
 

@@ -1,5 +1,22 @@
 # Journal des changements
 
+## [0.3.2] - 2026-01-13
+### Corrigé
+- Erreur de linking causée par définitions multiples de `WIFI_NETWORKS` dans secrets.h
+- Création du wrapper de sécurité `secrets_wrapper.h/.cpp` pour isoler l'inclusion de secrets.h
+- Adaptation de network.cpp pour utiliser l'API du wrapper (getWifiSsid, getWifiPassword, getWifiNetworksCount)
+- Suppression de l'include inutile de secrets.h dans main.cpp
+
+### Ajouté
+- Nouveau fichier `include/secrets_wrapper.h` - Interface d'accès sécurisée aux credentials
+- Nouveau fichier `src/secrets_wrapper.cpp` - Implémentation du wrapper (seul fichier incluant secrets.h)
+- Documentation complète du patch dans `docs/PATCH_001_SECRETS_WRAPPER_FR.md`
+
+### Sécurité
+- Les credentials restent centralisés uniquement dans secrets.h
+- Validation d'index pour éviter buffer overflow
+- Architecture garantissant qu'un seul fichier de compilation inclut secrets.h
+
 ## [0.3.1] - 2026-01-13
 - Correction de l'initialisation mDNS pour ne s'executer que si la connexion WiFi reussit
 - Desactivation des services reseau (mDNS, OTA, serveur web) en cas d'echec de connexion WiFi

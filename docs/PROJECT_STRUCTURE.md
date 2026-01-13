@@ -31,10 +31,12 @@
 │   ├── board_config.h          # GPIO definitions (environment-specific)
 │   ├── secrets.h               # WiFi credentials (user-created, ignored by git)
 │   ├── secrets_example.h       # WiFi template (do not edit)
+│   ├── secrets_wrapper.h       # Secure API for credential access
 │   └── [other headers]
 │
 ├── src/
 │   ├── main.cpp                # Entry point (setup, loop)
+│   ├── secrets_wrapper.cpp     # Secure wrapper (only file including secrets.h)
 │   └── [feature modules]       # Additional .cpp files for features
 │
 ├── lib/
@@ -82,6 +84,9 @@ Edit here for project-specific customization without touching firmware code.
 ### include/secrets.h
 **Git-ignored** (see `.gitignore`). User creates by duplicating `secrets_example.h`.
 Contains WiFi networks (SSID/password pairs). Never commit this file.
+
+**Important**: Since v0.3.2, this file should ONLY be included by `secrets_wrapper.cpp`.
+Other files must use `secrets_wrapper.h` API to access credentials securely.
 
 ### src/main.cpp
 **Entry point**. Contains:

@@ -3,7 +3,6 @@
 
 #include "board_config.h"
 #include "config.h"
-#include "secrets.h"
 
 // Modular components
 #include "psram.h"

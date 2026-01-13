@@ -1,6 +1,6 @@
 # 🎯 Refactorisation Modulaire - Résumé
 
-**Version**: 0.3.0  
+**Version**: 0.3.2  
 **Date**: 13 janvier 2026  
 **État**: ✅ COMPLÉTÉ
 
@@ -31,8 +31,9 @@ Le code a été complètement refactorisé pour passer de **1 fichier monolithiq
 | **buttons** | Entrée utilisateur | 63 |
 | **ui_state** | Gestion d'état global | 20 |
 | **psram** | Initialisation mémoire | 35 |
+| **secrets_wrapper** | Accès sécurisé credentials | 27 |
 | **main** | Orchestration | 70 |
-| **TOTAL** | - | **814** |
+| **TOTAL** | - | **841** |
 
 ---
 
