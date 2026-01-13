@@ -11,7 +11,7 @@ include/wifi-config.h
 # -----------------------------------------------------------------------------
 # 2. FICHIERS GENERES PAR COMPILATION ET OUTILS
 # -----------------------------------------------------------------------------
-
+#
 # FICHIERS ET DOSSIERS PLATFORMIO / ARDUINO IDE
 # ---------------------------------------------
 # PlatformIO
