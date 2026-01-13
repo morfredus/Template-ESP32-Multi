@@ -1,6 +1,20 @@
 # Journal des changements
 
-## [0.3.2] - 2026-01-13
+## [0.3.3] - 2026-01-13
+### Corrigé
+- Service mDNS ne démarrait pas correctement suite à une stabilisation WiFi insuffisante
+- Ajout de vérification de connexion WiFi avant démarrage mDNS
+- Ajout délai de 100ms pour assurer que la stack WiFi ESP32 est complètement initialisée
+- Amélioration logging des erreurs d'initialisation mDNS
+
+### Modifié
+- Amélioration de `Network::initMdns()` avec vérifications de stabilité et sortie debug
+- Affichage du nom d'hôte mDNS lors de l'initialisation réussie
+
+### Vérifié
+- Service mDNS démarre désormais de manière fiable après connexion WiFi
+- Périphérique détectable en tant que `[hostname].local` sur le réseau
+- Pas de régression sur les autres services réseau (OTA, WebServer)
 ### Corrigé
 - Erreur de linking causée par définitions multiples de `WIFI_NETWORKS` dans secrets.h
 - Création du wrapper de sécurité `secrets_wrapper.h/.cpp` pour isoler l'inclusion de secrets.h

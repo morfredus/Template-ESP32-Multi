@@ -40,10 +40,23 @@ bool connectWifiWithFeedback() {
 }
 
 bool initMdns() {
-  if (!MDNS.begin(kTemplateConfig.mdnsHost)) {
+  // Ensure WiFi is truly connected before starting mDNS
+  // mDNS requires a stable WiFi connection and valid IP address
+  if (!WiFi.isConnected()) {
+    Serial.println("[mDNS] ERROR: WiFi not connected, cannot start mDNS");
     return false;
   }
+  
+  // Add small delay to ensure WiFi stack is fully initialized
+  delay(100);
+  
+  if (!MDNS.begin(kTemplateConfig.mdnsHost)) {
+    Serial.println("[mDNS] ERROR: Failed to start mDNS service");
+    return false;
+  }
+  
   MDNS.addService("http", "tcp", 80);
+  Serial.printf("[mDNS] Started: %s.local\n", kTemplateConfig.mdnsHost);
   return true;
 }
 
