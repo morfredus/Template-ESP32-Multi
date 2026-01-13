@@ -1,5 +1,15 @@
 # Journal des changements
 
+## [0.2.0] - 2026-01-13
+- Reecriture de board_config.h avec commentaires pedagogiques pour debutants
+- Ajout de documentation educative pour les declarations GPIO incluant :
+  - Tensions requises pour chaque peripherique
+  - Valeurs des resistances et condensateurs avec leur puissance
+  - Alias courants des broches sur les modules (MISO/SDA, CLK/SCLK, etc.)
+  - Schemas de cablage en ASCII art
+  - Regles de securite et concepts electriques
+- Mise a jour de PIN_MAPPING.md avec composants requis detailles
+- Mise a jour de PIN_MAPPING_FR.md avec composants requis detailles
 ## [0.1.2] - 2026-01-13
 - Activation de la PSRAM sur ESP32-S3 N16R8 via flags de build et configuration OPI PSRAM
 
