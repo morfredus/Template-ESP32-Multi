@@ -1,5 +1,23 @@
 # Journal des changements
 
+## [0.3.0] - 2026-01-13
+- Refactorisation complete du code pour modularite et maintenabilite
+- Separation du code en modules fonctionnels :
+  - `tft_display.h/cpp` : Affichage ST7789 et fonctions de rendu
+  - `web_ui.h/cpp` : Constructeurs de pages HTML et generation de reponses JSON
+  - `web_styles.h/cpp` : Styles CSS et JavaScript pour l'interface Web
+  - `web_server.h/cpp` : Configuration du serveur HTTP et gestion des routes
+  - `network.h/cpp` : Connectivite WiFi, mDNS et OTA
+  - `neopixel.h/cpp` : Gestion des LEDs NeoPixel
+  - `buttons.h/cpp` : Entree utilisateur et logique de redemarrage
+  - `ui_state.h/cpp` : Gestion de l'etat global de l'interface
+  - `psram.h/cpp` : Initialisation de la PSRAM
+- Simplification du main.cpp pour utiliser les composants modulaires
+- Amelioration de l'organisation du code et reduction du main.cpp de 474 a ~70 lignes
+- Tous les modules utilisent des namespaces pour une meilleure organisation
+- Tous les modules sont independants et peuvent etre testes separement
+- Documentation amelioree avec en-tetes de fonction et descriptions de parametres
+
 ## [0.2.0] - 2026-01-13
 - Reecriture de board_config.h avec commentaires pedagogiques pour debutants
 - Ajout de documentation educative pour les declarations GPIO incluant :
