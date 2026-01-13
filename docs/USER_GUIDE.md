@@ -11,7 +11,7 @@
 - Pin map: review `include/board_config.h` for each environment before wiring.
 
 ## Environments
-- `esp32devkit`: classic ESP32 DevKit, no NeoPixel by default, LCD over VSPI (SCK 18, MOSI 23, CS 5, DC 16, RST 17, BL 4), buttons on 0/32/33.
+- `esp32devkit`: classic ESP32 DevKit, no NeoPixel by default, LCD over VSPI (SCK 18, MOSI 23, CS 15, DC 16, RST 14, BL 27), buttons on 0/32/33.
 - `esp32s3_n16r8`: ESP32-S3 DevKitC-1 N16R8, NeoPixel on GPIO48, LCD SPI on 12/11/13 with CS 10, DC 9, RST 8, BL 7, buttons on 0/16/17.
 
 ## Add modules

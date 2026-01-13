@@ -33,7 +33,7 @@ lib_deps =
 #if defined(ENV_ESP32S3_N16R8)
 #define DHT_PIN  15  // Your chosen GPIO
 #elif defined(ENV_ESP32_DEVKIT)
-#define DHT_PIN  35  // Your chosen GPIO
+#define DHT_PIN  25  // Free bidirectional GPIO (or 26)
 #endif
 ```
 

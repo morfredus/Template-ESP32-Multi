@@ -1,6 +1,10 @@
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/99f9b4e0-36b0-408a-a19b-68bbb6272378" alt="Template ESP32 Multi" width="800">
+</p>
+
 # Template ESP32 Multi-Environnements
 
-Template PlatformIO pour debutant couvrant ESP32 DevKit et ESP32-S3 DevKitC. Configuration centralisee, WiFiMulti, ecran, boutons, NeoPixel optionnel et interface Web embarquee.
+Template PlatformIO pour débutant couvrant ESP32 DevKit et ESP32-S3 DevKitC. Configuration centralisée, WiFiMulti, écran, boutons, NeoPixel optionnel et interface Web embarquée.
 
 ## Environnements
 - `esp32devkit` (ESP32 DevKit)
@@ -41,3 +45,6 @@ Template PlatformIO pour debutant couvrant ESP32 DevKit et ESP32-S3 DevKitC. Con
 
 ## Metadonnees projet
 Nom et version viennent de `platformio.ini` via `PROJECT_NAME` et `PROJECT_VERSION`. Ne pas les coder en dur dans le code.
+
+## Licence
+Ce code template est fourni pour réutilisation dans vos projets. Ajoutez votre licence lors de la duplication.
