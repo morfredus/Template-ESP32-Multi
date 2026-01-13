@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/99f9b4e0-36b0-408a-a19b-68bbb6272378" alt="Template ESP32 Multi" width="800">
+</p>
+
 # ESP32 Multi-Environment Template
 
 Beginner-friendly PlatformIO template for ESP32 DevKit and ESP32-S3 DevKitC. It centralizes configuration, WiFi onboarding, LCD feedback, buttons, optional NeoPixel, and a built-in web UI.
