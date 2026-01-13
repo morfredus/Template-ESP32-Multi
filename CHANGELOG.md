@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.3.0] - 2026-01-13
+- Complete code refactoring for modularity and maintainability
+- Separate codebase into functional modules:
+  - `tft_display.h/cpp`: LCD ST7789 display and rendering functions
+  - `web_ui.h/cpp`: HTML page builders and JSON response generation
+  - `web_styles.h/cpp`: CSS styles and JavaScript for web UI
+  - `web_server.h/cpp`: HTTP server setup and route handling
+  - `network.h/cpp`: WiFi, mDNS, and OTA connectivity
+  - `neopixel.h/cpp`: NeoPixel LED strip management
+  - `buttons.h/cpp`: Button input and reboot logic
+  - `ui_state.h/cpp`: Global UI state management
+  - `psram.h/cpp`: PSRAM initialization
+- Simplify main.cpp to use modular components
+- Improve code organization and reduce main.cpp from 474 to ~70 lines
+- All modules use namespaces for better organization
+- All modules are independent and can be tested separately
+- Enhance documentation with function headers and parameter descriptions
+
 ## [0.2.0] - 2026-01-13
 - Rewrite board_config.h with comprehensive beginner-friendly comments
 - Add educational documentation for GPIO declarations including:

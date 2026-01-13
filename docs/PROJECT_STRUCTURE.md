@@ -5,7 +5,6 @@
 00-Template-ESP32-Multi/
 ├── platformio.ini              # Project config, environments, version
 ├── .gitignore                  # Git ignore (includes secrets.h)
-├── .copilot                    # Copilot permanent instructions
 │
 ├── README.md                   # Quick overview (EN)
 ├── README_FR.md                # Quick overview (FR)
