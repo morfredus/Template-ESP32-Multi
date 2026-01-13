@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.2.0] - 2026-01-13
+- Rewrite board_config.h with comprehensive beginner-friendly comments
+- Add educational documentation for GPIO declarations including:
+  - Required voltages for each peripheral
+  - Resistor and capacitor values with power ratings
+  - Common module pin label aliases (MISO/SDA, CLK/SCLK, etc.)
+  - Wiring diagrams in ASCII art
+  - Safety rules and electrical concepts
+- Update PIN_MAPPING.md with detailed component requirements
+- Update PIN_MAPPING_FR.md with detailed component requirements
+
 ## [0.1.0] - 2026-01-12
 - Add multi-environment template for ESP32 DevKit and ESP32-S3 DevKitC-1
 - Implement WiFiMulti onboarding with LCD boot progress
