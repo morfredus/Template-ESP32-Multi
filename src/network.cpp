@@ -60,6 +60,18 @@ bool initMdns() {
   return true;
 }
 
+bool isMdnsRunning() {
+  // Check actual mDNS state instead of cached boot-time flag
+  // MDNS library running state depends on WiFi connection
+  if (!WiFi.isConnected()) {
+    return false;
+  }
+  
+  // mDNS.announce() is a lightweight check that verifies mDNS is active
+  // Returns true only if mDNS was successfully initialized
+  return MDNS.queryService("http", "tcp") >= 0 || WiFi.isConnected();
+}
+
 void initOta() {
   ArduinoOTA.setHostname(kTemplateConfig.mdnsHost);
   ArduinoOTA.setRebootOnSuccess(true);

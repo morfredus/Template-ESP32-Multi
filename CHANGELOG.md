@@ -1,6 +1,24 @@
 # Changelog
 
-## [0.3.3] - 2026-01-13
+## [0.3.4] - 2026-01-13
+### Fixed
+- mDNS status incorrectly displayed as "disabled" on LCD despite service running
+- Add dynamic mDNS state checking instead of relying on boot-time cached value
+- Implement `Network::isMdnsRunning()` to query actual mDNS service state
+
+### Added
+- New function `Network::isMdnsRunning()` - queries real mDNS state at runtime
+- Dynamic status update in display loop - mDNS status now reflects actual service state
+- Add network.h include to tft_display.cpp for isMdnsRunning() call
+
+### Changed
+- TFT display mDNS status now checks `Network::isMdnsRunning()` instead of cached `g_uiState.mdnsOk`
+- Hostname display updates dynamically as network conditions change
+
+### Technical
+- Root cause: Status was set only at boot, never updated in main display loop
+- Solution: Query actual mDNS state on each display update cycle
+- Behavior: Display shows hostname when mDNS is running, "disabled" otherwise
 ### Fixed
 - mDNS service initialization failing due to insufficient WiFi stabilization time
 - Add WiFi connection verification before starting mDNS

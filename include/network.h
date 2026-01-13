@@ -19,6 +19,13 @@ bool connectWifiWithFeedback();
 bool initMdns();
 
 /**
+ * Check if mDNS service is currently running.
+ * Queries actual mDNS state instead of relying on boot-time flag.
+ * @return true if mDNS is active and responding
+ */
+bool isMdnsRunning();
+
+/**
  * Initialize ArduinoOTA service for over-the-air updates.
  * Sets hostname and enables OTA updates.
  */

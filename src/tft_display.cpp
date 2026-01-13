@@ -2,6 +2,7 @@
 #include "config.h"
 #include "board_config.h"
 #include "ui_state.h"
+#include "network.h"
 #include <Arduino.h>
 #include <WiFi.h>
 #include <SPI.h>
@@ -157,7 +158,9 @@ void updateMainScreen(bool force) {
   tft.setCursor(kTextMarginPx, y);
   tft.print("mDNS:");
   y += 20;
-  y = printWrap(ui.mdnsOk ? String(kTemplateConfig.mdnsHost) : String("disabled"), 1, kTextMarginPx, y, lineWidth);
+  // Check actual mDNS state dynamically instead of cached boot-time flag
+  bool mdnsActive = wifiNow && Network::isMdnsRunning();
+  y = printWrap(mdnsActive ? String(kTemplateConfig.mdnsHost) : String("disabled"), 1, kTextMarginPx, y, lineWidth);
 }
 
 void drawRebootPrompt(uint8_t percent) {
