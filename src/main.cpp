@@ -35,28 +35,30 @@ void setup() {
   const bool wifiOk = Network::connectWifiWithFeedback();
   g_uiState.wifiConnected = wifiOk;
   
+  // Initialize network services based on WiFi status
   if (wifiOk) {
     TftDisplay::drawBootScreen("WiFi OK", 70);
     #if defined(ENV_ESP32S3_N16R8)
     NeoPixel::setColor(NeoPixel::makeColor(0, 80, 0));  // Green
     #endif
+
+    TftDisplay::drawBootScreen("Starting mDNS", 75);
+    g_uiState.mdnsOk = Network::initMdns();
+    
+    TftDisplay::drawBootScreen("Starting OTA", 80);
+    Network::initOta();
+    
+    TftDisplay::drawBootScreen("Starting web", 85);
+    HttpServer::init();
   } else {
     TftDisplay::drawBootScreen("WiFi fail", 70);
     #if defined(ENV_ESP32S3_N16R8)
     NeoPixel::setColor(NeoPixel::makeColor(80, 0, 0));  // Red
     #endif
+    
+    g_uiState.mdnsOk = false;
+    Serial.println("[MAIN] Network services disabled (WiFi connection failed)");
   }
-
-  // Initialize network services
-  TftDisplay::drawBootScreen("Starting mDNS", 75);
-  g_uiState.mdnsOk = Network::initMdns();
-  
-  TftDisplay::drawBootScreen("Starting OTA", 80);
-  Network::initOta();
-  
-  // Setup web server
-  TftDisplay::drawBootScreen("Starting web", 85);
-  HttpServer::init();
 
   // Show ready screen
   TftDisplay::drawBootScreen("Ready", 100);

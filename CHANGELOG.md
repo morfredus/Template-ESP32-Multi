@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.3.1] - 2026-01-13
+- Fix mDNS initialization to only run when WiFi connection is successful
+- Skip network services (mDNS, OTA, web server) when WiFi fails to connect
+- Add consistent logging message when network services are disabled
+
 ## [0.3.0] - 2026-01-13
 - Complete code refactoring for modularity and maintainability
 - Separate codebase into functional modules:

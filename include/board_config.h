@@ -155,7 +155,7 @@
                                 //   GND ◄─────────── Emetteur (E)
 
 #define DISPLAY_WIDTH       240   // Largeur ecran en pixels
-#define DISPLAY_HEIGHT      240   // Hauteur ecran en pixels
+#define DISPLAY_HEIGHT      320   // Hauteur ecran en pixels
 #define DISPLAY_SPI_FREQ    40000000UL  // Frequence SPI : 40 MHz (rapide pour S3)
 
 // ────────────────────────────────────────────────────────────────────────────

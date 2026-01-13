@@ -141,22 +141,22 @@ void updateMainScreen(bool force) {
 
   // Details (smaller font, wrapped)
   uint16_t y = 80;
-  tft.setTextSize(1);
+  tft.setTextSize(2);
   tft.setCursor(kTextMarginPx, y);
   tft.print("SSID:");
-  y += 12;
+  y += 20;
   y = printWrap(ssidNow, 1, kTextMarginPx, y, lineWidth);
-  y += 4;
+  y += 20;
 
   tft.setCursor(kTextMarginPx, y);
   tft.print("IP:");
-  y += 12;
+  y += 20;
   y = printWrap(wifiNow ? ipNow.toString() : String("0.0.0.0"), 1, kTextMarginPx, y, lineWidth);
-  y += 4;
+  y += 20;
 
   tft.setCursor(kTextMarginPx, y);
   tft.print("mDNS:");
-  y += 12;
+  y += 20;
   y = printWrap(ui.mdnsOk ? String(kTemplateConfig.mdnsHost) : String("disabled"), 1, kTextMarginPx, y, lineWidth);
 }
 

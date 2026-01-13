@@ -1,5 +1,10 @@
 # Journal des changements
 
+## [0.3.1] - 2026-01-13
+- Correction de l'initialisation mDNS pour ne s'executer que si la connexion WiFi reussit
+- Desactivation des services reseau (mDNS, OTA, serveur web) en cas d'echec de connexion WiFi
+- Ajout de message de log coherent quand les services reseau sont desactives
+
 ## [0.3.0] - 2026-01-13
 - Refactorisation complete du code pour modularite et maintenabilite
 - Separation du code en modules fonctionnels :
