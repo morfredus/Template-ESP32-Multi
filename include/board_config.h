@@ -69,10 +69,10 @@
 #define DISPLAY_CS_PIN      10   // Selection ecran (CS/CE). Actif LOW.
 #define DISPLAY_MOSI_PIN    11   // Données ESP32 -> Ecran (SDA/DIN).
 #define DISPLAY_SCK_PIN     12   // Horloge SPI (SCLK/CLK).
-#define DISPLAY_DC_PIN      13   // Data/Command (RS/A0). LOW=Cmd, HIGH=Pixel.
-#define DISPLAY_RST_PIN     14   // Reset materiel (RES). Pulse LOW pour reset.
+#define DISPLAY_DC_PIN      17   // Data/Command (RS/A0). LOW=Cmd, HIGH=Pixel.
+#define DISPLAY_RST_PIN     18   // Reset materiel (RES). Pulse LOW pour reset.
 #define DISPLAY_MISO_PIN    15   // Donnees Ecran -> ESP32 (SDO). Souvent inutilise.
-#define DISPLAY_BL_PIN       4   // Retroeclairage (BLK/LED). PWM possible.
+#define DISPLAY_BL_PIN      16   // Retroeclairage (BLK/LED). PWM possible.
                                  // Situe cote droit pour equilibrer le cablage.
 
 #define DISPLAY_WIDTH      240   // Largeur ecran pixels.
