@@ -1,6 +1,6 @@
 # Guide de Mapping des Broches (FR)
 
-> **Version minimum :** 0.2.0
+> **Version minimum :** 0.4.0
 
 ## Guide du Debutant : Concepts Electriques Essentiels
 
@@ -125,10 +125,10 @@
 | **Ecran SCK** | 18 | VSPI_CLK, SPI3_CLK, SCK | OUTPUT (SPI) | Horloge LCD (VSPI) |
 | **Ecran MOSI** | 23 | VSPI_MOSI, SPI3_MOSI, MOSI | OUTPUT (SPI) | Donnees LCD (VSPI) |
 | **Ecran MISO** | 19 | VSPI_MISO, SPI3_MISO, MISO | INPUT (SPI) | Donnees LCD (VSPI, optionnel) |
-| **Ecran CS** | 15 | MTDO, VSPI_CS0, SPI3_CS0, CS | OUTPUT | Selection puce |
+| **Ecran CS** | 5 | VSPI_CS0, SPI3_CS0, CS | OUTPUT | Selection puce |
 | **Ecran DC** | 16 | U2RXD, RXD2 | OUTPUT | Donnees/Commande |
-| **Ecran RST** | 14 | TMS, MTMS, CLK | OUTPUT | Reinitialisation |
-| **Ecran BL** | 27 | RTC_GPIO17 | OUTPUT (PWM) | Retroeclairage |
+| **Ecran RST** | 17 | U2TXD, TXD2 | OUTPUT | Reinitialisation |
+| **Ecran BL** | 4 | RTC_GPIO10 | OUTPUT (PWM) | Retroeclairage |
 
 **Schema de Cablage :**
 ```
@@ -138,10 +138,10 @@
     GND ──────────────────► GND
     GPIO18 (SCK) ─────────► SCK/CLK/SCLK
     GPIO23 (MOSI) ────────► SDA/DIN/MOSI
-    GPIO15 (CS) ──────────► CS/CE/SS
+    GPIO5  (CS) ──────────► CS/CE/SS
     GPIO16 (DC) ──────────► DC/RS/A0
-    GPIO14 (RST) ─────────► RST/RES/RESET
-    GPIO27 (BL) ──────────► BL/LED
+    GPIO17 (RST) ─────────► RST/RES/RESET
+    GPIO4  (BL) ──────────► BL/LED
 ```
 
 **Broches SPI utilisees :** 6 (VSPI/SPI3)
@@ -172,9 +172,9 @@
 | **Ecran MOSI** | 11 | HSPI_MOSI, SPI2_MOSI, MOSI | OUTPUT (SPI) | Donnees LCD |
 | **Ecran MISO** | 13 | HSPI_MISO, SPI2_MISO, MISO | INPUT (SPI) | Donnees LCD (optionnel) |
 | **Ecran CS** | 10 | HSPI_CS0, SPI2_CS0, CS | OUTPUT | Selection puce |
-| **Ecran DC** | 9 | MTCK, DAC2 | OUTPUT | Donnees/Commande |
-| **Ecran RST** | 8 | MTDI, DAC1 | OUTPUT | Reinitialisation |
-| **Ecran BL** | 7 | — | OUTPUT (PWM) | Retroeclairage |
+| **Ecran DC** | 13 | HSPI_MISO, SPI2_MISO, MISO | OUTPUT | Donnees/Commande |
+| **Ecran RST** | 14 | MTMS, TMS, CLK | OUTPUT | Reinitialisation |
+| **Ecran BL** | 4 | RTC_GPIO4 | OUTPUT (PWM) | Retroeclairage |
 
 **Schema de Cablage :**
 ```
@@ -185,9 +185,9 @@
     GPIO12 (SCK) ─────────► SCK/CLK/SCLK
     GPIO11 (MOSI) ────────► SDA/DIN/MOSI
     GPIO10 (CS) ──────────► CS/CE/SS
-    GPIO9  (DC) ──────────► DC/RS/A0
-    GPIO8  (RST) ─────────► RST/RES/RESET
-    GPIO7  (BL) ──────────► BL/LED
+    GPIO13 (DC) ──────────► DC/RS/A0
+    GPIO14 (RST) ─────────► RST/RES/RESET
+    GPIO4  (BL) ──────────► BL/LED
 ```
 
 **Broches SPI utilisees :** 6 (HSPI/SPI2)

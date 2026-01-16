@@ -1,6 +1,6 @@
 # Pin Mapping Guide (EN)
 
-> **Minimum version:** 0.2.0
+> **Minimum version:** 0.4.0
 
 ## Beginner's Guide: Essential Electrical Concepts
 
@@ -125,10 +125,10 @@
 | **Display SCK** | 18 | VSPI_CLK, SPI3_CLK, SCK | OUTPUT (SPI) | LCD clock (VSPI) |
 | **Display MOSI** | 23 | VSPI_MOSI, SPI3_MOSI, MOSI | OUTPUT (SPI) | LCD data (VSPI) |
 | **Display MISO** | 19 | VSPI_MISO, SPI3_MISO, MISO | INPUT (SPI) | LCD data (VSPI, optional) |
-| **Display CS** | 15 | MTDO, VSPI_CS0, SPI3_CS0, CS | OUTPUT | Chip select |
+| **Display CS** | 5 | VSPI_CS0, SPI3_CS0, CS | OUTPUT | Chip select |
 | **Display DC** | 16 | U2RXD, RXD2 | OUTPUT | Data/Command |
-| **Display RST** | 14 | TMS, MTMS, CLK | OUTPUT | Reset |
-| **Display BL** | 27 | RTC_GPIO17 | OUTPUT (PWM) | Backlight |
+| **Display RST** | 17 | U2TXD, TXD2 | OUTPUT | Reset |
+| **Display BL** | 4 | RTC_GPIO10 | OUTPUT (PWM) | Backlight |
 
 **Wiring Diagram:**
 ```
@@ -138,10 +138,10 @@
     GND ──────────────────► GND
     GPIO18 (SCK) ─────────► SCK/CLK/SCLK
     GPIO23 (MOSI) ────────► SDA/DIN/MOSI
-    GPIO15 (CS) ──────────► CS/CE/SS
+    GPIO5  (CS) ──────────► CS/CE/SS
     GPIO16 (DC) ──────────► DC/RS/A0
-    GPIO14 (RST) ─────────► RST/RES/RESET
-    GPIO27 (BL) ──────────► BL/LED
+    GPIO17 (RST) ─────────► RST/RES/RESET
+    GPIO4  (BL) ──────────► BL/LED
 ```
 
 **Total SPI Pins Used:** 6 (VSPI/SPI3)
@@ -172,9 +172,9 @@
 | **Display MOSI** | 11 | HSPI_MOSI, SPI2_MOSI, MOSI | OUTPUT (SPI) | LCD data |
 | **Display MISO** | 13 | HSPI_MISO, SPI2_MISO, MISO | INPUT (SPI) | LCD data (optional) |
 | **Display CS** | 10 | HSPI_CS0, SPI2_CS0, CS | OUTPUT | Chip select |
-| **Display DC** | 9 | MTCK, DAC2 | OUTPUT | Data/Command |
-| **Display RST** | 8 | MTDI, DAC1 | OUTPUT | Reset |
-| **Display BL** | 7 | — | OUTPUT (PWM) | Backlight |
+| **Display DC** | 13 | HSPI_MISO, SPI2_MISO, MISO | OUTPUT | Data/Command |
+| **Display RST** | 14 | MTMS, TMS, CLK | OUTPUT | Reset |
+| **Display BL** | 4 | RTC_GPIO4 | OUTPUT (PWM) | Backlight |
 
 **Wiring Diagram:**
 ```
@@ -185,9 +185,9 @@
     GPIO12 (SCK) ─────────► SCK/CLK/SCLK
     GPIO11 (MOSI) ────────► SDA/DIN/MOSI
     GPIO10 (CS) ──────────► CS/CE/SS
-    GPIO9  (DC) ──────────► DC/RS/A0
-    GPIO8  (RST) ─────────► RST/RES/RESET
-    GPIO7  (BL) ──────────► BL/LED
+    GPIO13 (DC) ──────────► DC/RS/A0
+    GPIO14 (RST) ─────────► RST/RES/RESET
+    GPIO4  (BL) ──────────► BL/LED
 ```
 
 **Total SPI Pins Used:** 6 (HSPI/SPI2)

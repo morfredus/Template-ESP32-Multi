@@ -1,5 +1,17 @@
 # Journal des changements
 
+## [0.4.0] - 2026-01-16
+### Modifié
+- Mise à jour du pin mapping pour les deux environnements de développement
+- ESP32 DevKit: CS 15→5, RST 14→17, BL 27→4
+- ESP32-S3 N16R8: DC 9→13, RST 8→14, BL 7→4
+- Mise à jour de toute la documentation utilisateur pour refléter les nouvelles affectations de broches
+
+### Documentation
+- Mise à jour PIN_MAPPING.md et PIN_MAPPING_FR.md avec les nouvelles affectations GPIO
+- Mise à jour des schémas de câblage pour les deux cartes
+- Mise à jour de la version minimale requise à 0.4.0 dans la documentation du pin mapping
+
 ## [0.3.4] - 2026-01-13
 ### Corrigé
 - Statut mDNS incorrectement affiché comme "disabled" sur LCD alors que le service fonctionnait

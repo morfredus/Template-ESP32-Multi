@@ -1,5 +1,7 @@
 # Guide Utilisateur (FR)
 
+> **Version minimum :** 0.4.0
+
 ## Dupliquer le template
 - Copier le dossier du depot puis le renommer.
 - Mettre a jour `PROJECT_NAME` et `PROJECT_VERSION` uniquement dans `platformio.ini`.
@@ -11,8 +13,8 @@
 - Pin map : verifier `include/board_config.h` pour chaque environnement avant de cabler.
 
 ## Environnements
-- `esp32devkit` : ESP32 DevKit classique, pas de NeoPixel, LCD sur VSPI (SCK 18, MOSI 23, CS 15, DC 16, RST 14, BL 27), boutons 0/32/33.
-- `esp32s3_n16r8` : ESP32-S3 DevKitC-1 N16R8, NeoPixel GPIO48, LCD SPI 12/11/13 avec CS 10, DC 9, RST 8, BL 7, boutons 0/16/17.
+- `esp32devkit` : ESP32 DevKit classique, pas de NeoPixel, LCD sur VSPI (SCK 18, MOSI 23, CS 5, DC 16, RST 17, BL 4), boutons 0/32/33.
+- `esp32s3_n16r8` : ESP32-S3 DevKitC-1 N16R8, NeoPixel GPIO48, LCD SPI 12/11/15 avec CS 10, DC 13, RST 14, BL 4, boutons 0/16/17.
 
 ## Ajouter des modules
 - Mettre le code commun dans `src/` ou `lib/`. Les headers partages vont dans `include/`.

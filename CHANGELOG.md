@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.0] - 2026-01-16
+### Changed
+- Updated pin mapping for both development environments
+- ESP32 DevKit: CS 15→5, RST 14→17, BL 27→4
+- ESP32-S3 N16R8: DC 9→13, RST 8→14, BL 7→4
+- Updated all user documentation to reflect new pin assignments
+
+### Documentation
+- Updated PIN_MAPPING.md and PIN_MAPPING_FR.md with new GPIO assignments
+- Updated wiring diagrams for both boards
+- Updated minimum version requirement to 0.4.0 in pin mapping documentation
+
 ## [0.3.4] - 2026-01-13
 ### Fixed
 - mDNS status incorrectly displayed as "disabled" on LCD despite service running
