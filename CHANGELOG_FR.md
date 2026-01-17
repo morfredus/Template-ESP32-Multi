@@ -1,5 +1,13 @@
 # Journal des changements
 
+## [0.4.1] - 2026-01-17
+### Modifié
+- Incrément de version pour publication après corrections de documentation sur le pin mapping
+- Synchronisation de dev/maint vers main pour la release
+
+### Documentation
+- Aucun changement de contenu depuis 0.4.0 ; les documents restent valides à partir de 0.4.0
+
 ## [0.4.0] - 2026-01-17
 ### Modifié
 - Mise à jour du pin mapping pour les deux environnements de développement pour performances optimales

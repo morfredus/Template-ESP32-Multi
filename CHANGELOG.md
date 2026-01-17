@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.1] - 2026-01-17
+### Changed
+- Version bump for release after documentation corrections on pin mapping
+- Synced dev/maint into main for publication
+
+### Documentation
+- No content changes since 0.4.0; documents remain valid from 0.4.0
+
 ## [0.4.0] - 2026-01-17
 ### Changed
 - Updated pin mapping for both development environments for optimal performance
