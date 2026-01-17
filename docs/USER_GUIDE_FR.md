@@ -1,6 +1,9 @@
+
 # Guide Utilisateur (FR)
 
 > **Version minimum :** 0.4.2
+
+> **La documentation technique complète de chaque module est disponible dans [ModularDocs/README_FR.md](../ModularDocs/README_FR.md). Toutes les fiches sont pédagogiques et incluent une section spéciale pour les débutants.**
 
 ## Dupliquer le template
 - Copier le dossier du depot puis le renommer.

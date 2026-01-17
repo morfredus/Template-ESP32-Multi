@@ -2,9 +2,20 @@
   <img src="https://github.com/user-attachments/assets/99f9b4e0-36b0-408a-a19b-68bbb6272378" alt="Template ESP32 Multi" width="800">
 </p>
 
+
 # ESP32 Multi-Environment Template
 
+**Version actuelle : 0.4.2**  
+*Ce projet met l'accent sur l'accessibilité aux débutants grâce à une documentation pédagogique et modulaire.*
+
 Beginner-friendly PlatformIO template for ESP32 DevKit and ESP32-S3 DevKitC. It centralizes configuration, WiFi onboarding, LCD feedback, buttons, optional NeoPixel, and a built-in web UI.
+
+## 📚 Documentation technique et pédagogique
+- Toute la documentation technique de chaque module (EN/FR) est disponible dans le dossier [ModularDocs/](ModularDocs/README.md).
+- Chaque fiche explique le rôle, les fonctions, les paramètres et les bonnes pratiques, avec une section spéciale "For beginners".
+- Un schéma d'architecture modulaire est inclus pour visualiser les interactions.
+
+> **Pour les débutants :** Suivez les guides pas-à-pas et consultez les fiches ModularDocs pour comprendre chaque composant du projet.
 
 ## Environments
 - `esp32devkit` (ESP32 DevKit)

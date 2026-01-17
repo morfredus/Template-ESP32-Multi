@@ -1,4 +1,7 @@
+
 # Project Structure (EN)
+
+> **Full technical documentation for each module is available in [ModularDocs/README.md](../ModularDocs/README.md). All docs are beginner-friendly and include a dedicated section for newcomers.**
 
 ## File Tree
 ```

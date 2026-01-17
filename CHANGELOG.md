@@ -1,4 +1,15 @@
+
+
 # Changelog
+
+## [0.4.3] - 2026-01-17
+### Documentation
+- Full migration to ModularDocs/ (bilingual, modular, beginner-friendly)
+- All project docs updated to reference ModularDocs
+- Tech/ folder removed
+- Version bump in platformio.ini
+
+> **All technical documentation is now modular, bilingual, and beginner-friendly. See [ModularDocs/README.md](ModularDocs/README.md) for details.**
 
 ## [0.4.2] - 2026-01-17
 ### Added

@@ -1,4 +1,15 @@
+
+
 # Journal des changements
+
+## [0.4.3] - 2026-01-17
+### Documentation
+- Migration complète vers ModularDocs/ (bilingue, modulaire, pédagogique)
+- Tous les documents du projet référencent ModularDocs
+- Suppression du dossier Tech/
+- Incrément de version dans platformio.ini
+
+> **Toute la documentation technique est désormais modulaire, bilingue et pédagogique. Voir [ModularDocs/README_FR.md](ModularDocs/README_FR.md) pour le détail.**
 
 ## [0.4.2] - 2026-01-17
 ### Ajouté
