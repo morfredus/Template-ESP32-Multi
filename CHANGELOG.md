@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.4.2] - 2026-01-17
+### Added
+- Progressive power management during boot sequence to prevent bootloop on weak USB ports
+- New configuration parameter `bootBacklightLevel` to reduce display backlight during boot
+- Function `fadeBacklightToNormal()` to gradually increase backlight after boot completion
+
+### Changed
+- Display backlight now starts at ~30% during boot (77/255) instead of 100%
+- Backlight gradually fades to full brightness over 500ms after boot complete
+- NeoPixel LED now starts off (black) during boot instead of soft blue
+- Reduced current draw during initialization phase to improve stability on low-power USB ports
+
+### Fixed
+- Bootloop issue on computers with insufficient USB port power delivery
+- Inrush current spikes during simultaneous peripheral initialization
+
 ## [0.4.1] - 2026-01-17
 ### Changed
 - Version bump for release after documentation corrections on pin mapping

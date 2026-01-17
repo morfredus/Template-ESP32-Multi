@@ -62,6 +62,11 @@ void setup() {
   // Show ready screen
   TftDisplay::drawBootScreen("Ready", 100);
   delay(500);
+  
+  // Now that boot is complete, gradually increase backlight to normal level
+  // This reduces inrush current and prevents bootloop on weak USB ports
+  TftDisplay::fadeBacklightToNormal(500);
+  
   TftDisplay::updateMainScreen(true);
   
   Serial.println("[MAIN] Setup complete!");

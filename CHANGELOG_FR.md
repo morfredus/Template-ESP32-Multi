@@ -1,5 +1,21 @@
 # Journal des changements
 
+## [0.4.2] - 2026-01-17
+### Ajouté
+- Gestion progressive de la puissance pendant la séquence de boot pour éviter les bootloops sur ports USB faibles
+- Nouveau paramètre de configuration `bootBacklightLevel` pour réduire le rétroéclairage durant le boot
+- Fonction `fadeBacklightToNormal()` pour augmenter progressivement le rétroéclairage après le boot
+
+### Modifié
+- Le rétroéclairage démarre maintenant à ~30% durant le boot (77/255) au lieu de 100%
+- Le rétroéclairage monte progressivement vers la luminosité normale sur 500ms après le boot
+- La LED NeoPixel démarre maintenant éteinte (noir) durant le boot au lieu de bleu doux
+- Réduction de la consommation de courant durant la phase d'initialisation pour améliorer la stabilité sur ports USB basse puissance
+
+### Corrigé
+- Problème de bootloop sur ordinateurs avec ports USB à délivrance de puissance insuffisante
+- Pics de courant d'appel lors de l'initialisation simultanée des périphériques
+
 ## [0.4.1] - 2026-01-17
 ### Modifié
 - Incrément de version pour publication après corrections de documentation sur le pin mapping

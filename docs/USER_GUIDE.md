@@ -1,6 +1,6 @@
 # User Guide (EN)
 
-> **Minimum version:** 0.4.0
+> **Minimum version:** 0.4.2
 
 ## Duplicate the template
 - Copy the repository folder, then rename it.
@@ -34,7 +34,10 @@
 ## LCD system
 - ST7789 over SPI with Adafruit GFX. No full-screen clear loops at runtime; updates are targeted to limit flicker.
 - Boot bar is enabled by default; disable via `enableBootBar` if needed.
-- Backlight uses LEDC PWM; adjust `backlightLevel` (0-255) in `config.h`.
+- Backlight uses LEDC PWM with two levels:
+  - `bootBacklightLevel` (default 77/255, ~30%): reduced brightness during boot to minimize current draw and prevent bootloops on weak USB ports
+  - `backlightLevel` (default 255/255, 100%): normal operation brightness, reached progressively after boot via 500ms fade
+- Progressive power management prevents inrush current spikes during initialization.
 
 ## Web UI
 - Served by the built-in `WebServer` on port 80.
