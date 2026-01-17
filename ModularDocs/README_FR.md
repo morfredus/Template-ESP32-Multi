@@ -1,7 +1,7 @@
 
 # Documentation modulaire (ModularDocs)
 
-**Version actuelle : 0.4.3**
+**Version minimale valide : 0.4.4**
 *Cette documentation est conçue pour être accessible et pédagogique, même pour les débutants.*
 
 Ce dossier contient la documentation détaillée et pédagogique de chaque module du projet ESP32. Pour une vue d'ensemble graphique, voir `modular_architecture_graphic.md`.
@@ -26,6 +26,10 @@ Ce dossier contient la documentation détaillée et pédagogique de chaque modul
 - secrets_wrapper.md / secrets_wrapper_FR.md : Gestion des secrets
 
 Chaque fiche explique le rôle, les fonctions, les paramètres et les bonnes pratiques pour chaque module, en anglais et en français.
+
+---
+
+> **Note :** Toutes les références aux boutons et GPIO dans le code sont désormais strictement conformes aux noms définis dans board_config.h (source officielle, immuable). Les constantes d'affichage (DISPLAY_WIDTH, DISPLAY_HEIGHT, DISPLAY_SPI_FREQ) sont définies pour ESP32 Classic et ESP32-S3.
 
 ---
 

@@ -10,8 +10,8 @@ namespace Buttons {
 
 void init() {
   pinMode(BUTTON_BOOT_PIN, INPUT_PULLUP);
-  pinMode(BUTTON_USER1_PIN, INPUT_PULLUP);
-  pinMode(BUTTON_USER2_PIN, INPUT_PULLUP);
+  pinMode(BUTTON_1_PIN, INPUT_PULLUP);
+  pinMode(BUTTON_2_PIN, INPUT_PULLUP);
 }
 
 void handle() {

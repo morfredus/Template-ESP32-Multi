@@ -1,7 +1,14 @@
 
+
 # Project Structure (EN)
 
-> **Full technical documentation for each module is available in [ModularDocs/README.md](../ModularDocs/README.md). All docs are beginner-friendly and include a dedicated section for newcomers.**
+> **Minimum valid version:** 0.4.4
+
+---
+
+> **Note:** All button and GPIO references in code now strictly match the names defined in board_config.h (immutable source of truth). Display constants (DISPLAY_WIDTH, DISPLAY_HEIGHT, DISPLAY_SPI_FREQ) are defined for both ESP32 Classic and ESP32-S3.
+
+Full technical documentation for each module is available in [ModularDocs/README.md](../ModularDocs/README.md). All docs are beginner-friendly and include a dedicated section for newcomers.
 
 ## File Tree
 ```

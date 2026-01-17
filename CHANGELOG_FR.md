@@ -12,7 +12,21 @@
 > **Toute la documentation technique est désormais modulaire, bilingue et pédagogique. Voir [ModularDocs/README_FR.md](ModularDocs/README_FR.md) pour le détail.**
 
 ## [0.4.2] - 2026-01-17
-### Ajouté
+# Journal des changements
+
+## [0.4.4] - 2026-01-17
+### Modifié
+- Mise à jour stricte : toutes les références aux boutons et GPIO sont conformes à board_config.h (source officielle, immuable)
+- Ajout des constantes DISPLAY_WIDTH, DISPLAY_HEIGHT, DISPLAY_SPI_FREQ pour ESP32 Classic et ESP32-S3
+- Documentation intégralement mise à jour (EN/FR) pour refléter le mapping et les changements d'affichage
+- Tags de version minimale mis à jour partout
+
+### Documentation
+- Tous les documents sont valides à partir de 0.4.4
+
+### Corrigé
+- Toute incohérence résiduelle dans les noms de boutons/GPIO
+
 - Gestion progressive de la puissance pendant la séquence de boot pour éviter les bootloops sur ports USB faibles
 - Nouveau paramètre de configuration `bootBacklightLevel` pour réduire le rétroéclairage durant le boot
 - Fonction `fadeBacklightToNormal()` pour augmenter progressivement le rétroéclairage après le boot

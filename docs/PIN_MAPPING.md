@@ -1,6 +1,11 @@
+
 # Pin Mapping Guide (EN)
 
-> **Minimum version:** 0.4.0
+> **Minimum valid version:** 0.4.4
+
+---
+
+> **Note:** All button and GPIO references in code now strictly match the names defined in board_config.h (immutable source of truth). Display constants (DISPLAY_WIDTH, DISPLAY_HEIGHT, DISPLAY_SPI_FREQ) are defined for both ESP32 Classic and ESP32-S3.
 
 ## Beginner's Guide: Essential Electrical Concepts
 

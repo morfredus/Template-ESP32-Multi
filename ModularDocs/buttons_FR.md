@@ -1,5 +1,11 @@
 # Module : buttons (Gestion des boutons)
 
+> **Version minimale valide : 0.4.4**
+
+---
+
+> **Note :** Toutes les références aux boutons et GPIO dans le code sont désormais strictement conformes aux noms définis dans board_config.h (source officielle, immuable).
+
 ## Rôle du module
 Ce module gère les boutons physiques de la carte. Il détecte les appuis, les appuis longs, et permet au système de réagir aux actions de l'utilisateur (reboot, navigation menu, etc.).
 

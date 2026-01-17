@@ -1,5 +1,11 @@
 # Module: tft_display (LCD Display)
 
+> **Minimum valid version:** 0.4.4
+
+---
+
+> **Note:** Display constants (DISPLAY_WIDTH, DISPLAY_HEIGHT, DISPLAY_SPI_FREQ) are defined for both ESP32 Classic and ESP32-S3 in board_config.h.
+
 ## Module role
 This module manages everything related to the LCD display (drawing, backlight, messages, etc.). It allows you to show information to the user, display system status, and improve the visual experience.
 

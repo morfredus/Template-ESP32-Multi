@@ -1,5 +1,11 @@
 # Démarrage rapide (FR)
 
+> **Version minimale valide :** 0.4.4
+
+---
+
+> **Note :** Toutes les références aux boutons et GPIO dans le code sont désormais strictement conformes aux noms définis dans board_config.h (source officielle, immuable). Les constantes d'affichage (DISPLAY_WIDTH, DISPLAY_HEIGHT, DISPLAY_SPI_FREQ) sont définies pour ESP32 Classic et ESP32-S3.
+
 ## 1. Prérequis
 - Visual Studio Code + extension PlatformIO
 - Python 3.6+

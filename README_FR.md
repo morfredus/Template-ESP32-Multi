@@ -3,9 +3,10 @@
 </p>
 
 
+
 # Template ESP32 Multi-Environnements
 
-**Version actuelle : 0.4.3**
+**Version minimale valide : 0.4.4**
 *Ce projet met l'accent sur l'accessibilité aux débutants grâce à une documentation pédagogique et modulaire.*
 
 Template PlatformIO pour débutant couvrant ESP32 DevKit et ESP32-S3 DevKitC. Configuration centralisée, WiFiMulti, écran, boutons, NeoPixel optionnel et interface Web embarquée.
@@ -25,7 +26,7 @@ Template PlatformIO pour débutant couvrant ESP32 DevKit et ESP32-S3 DevKitC. Co
 1. Copier ce dossier pour creer un nouveau projet.
 2. Dupliquer `include/secrets_example.h` en `include/secrets.h`, puis lister vos reseaux WiFi.
 3. Ajuster `include/config.h` (nom mDNS, rotation ecran, delais).
-4. Verifier le pin mapping dans `include/board_config.h` selon votre carte.
+4. Vérifier le pin mapping dans `include/board_config.h` selon votre carte. Tous les noms de boutons et GPIO sont strictement définis par board_config.h (source officielle, immuable).
 5. Compiler et flasher avec `pio run -t upload` (choisir `esp32devkit` ou `esp32s3_n16r8`).
 6. Ouvrir le moniteur serie a 115200 bauds.
 
@@ -43,13 +44,15 @@ Template PlatformIO pour débutant couvrant ESP32 DevKit et ESP32-S3 DevKitC. Co
 - `include/board_config.h` — correspondance des broches par environnement
 - `include/secrets.h` — identifiants WiFi (hors VCS) ; modele dans `include/secrets_example.h`
 
-## Ecran et Web UI
-- LCD pilote Adafruit ST7789 + GFX via SPI. Maintenir la coherence des pins et de la rotation.
+## Écran et Web UI
+- LCD pilote Adafruit ST7789 + GFX via SPI. Maintenir la cohérence des pins et de la rotation.
+- Constantes d'affichage : DISPLAY_WIDTH, DISPLAY_HEIGHT, DISPLAY_SPI_FREQ sont maintenant définies pour ESP32 Classic et ESP32-S3 dans board_config.h.
 - UI Web accessible sur `http://<ip-appareil>/` et `http://<mdns>.local/` si mDNS actif.
 
 ## Boutons
-- BOOT (GPIO0) appui long -> barre de reboot; relacher pour annuler.
-- Deux boutons user exposes dans `board_config.h`.
+- BOOT (GPIO0) appui long -> barre de reboot; relâcher pour annuler.
+- Deux boutons user exposés dans `board_config.h`.
+- Toutes les références aux boutons dans le code utilisent strictement les noms définis dans board_config.h : BUTTON_BOOT, BUTTON_1, BUTTON_2.
 
 ## NeoPixel (ESP32-S3 uniquement)
 - GPIO48 reserve au NeoPixel (1 LED par defaut). Couleurs = etat WiFi.

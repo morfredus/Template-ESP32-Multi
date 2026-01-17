@@ -1,6 +1,11 @@
+
 # Guide de Mapping des Broches (FR)
 
-> **Version minimum :** 0.4.0
+> **Version minimale valide :** 0.4.4
+
+---
+
+> **Note :** Toutes les références aux boutons et GPIO dans le code sont désormais strictement conformes aux noms définis dans board_config.h (source officielle, immuable). Les constantes d'affichage (DISPLAY_WIDTH, DISPLAY_HEIGHT, DISPLAY_SPI_FREQ) sont définies pour ESP32 Classic et ESP32-S3.
 
 ## Guide du Debutant : Concepts Electriques Essentiels
 

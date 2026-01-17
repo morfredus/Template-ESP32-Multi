@@ -1,5 +1,10 @@
 # Getting Started (EN)
 
+> **Minimum valid version:** 0.4.4
+
+> **Note:** All button and GPIO references in code now strictly match the names defined in board_config.h (immutable source of truth). Display constants (DISPLAY_WIDTH, DISPLAY_HEIGHT, DISPLAY_SPI_FREQ) are defined for both ESP32 Classic and ESP32-S3.
+# Getting Started (EN)
+
 ## 1. Prerequisites
 - Visual Studio Code with PlatformIO extension
 - Python 3.6+

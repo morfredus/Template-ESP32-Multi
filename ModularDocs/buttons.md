@@ -1,5 +1,11 @@
 # Module: buttons (Button handling)
 
+> **Minimum valid version:** 0.4.4
+
+---
+
+> **Note:** All button and GPIO references in code now strictly match the names defined in board_config.h (immutable source of truth).
+
 ## Module role
 This module manages the physical buttons on the board. It detects button presses, long presses, and allows the system to react to user input (like reboot, menu navigation, etc.).
 
