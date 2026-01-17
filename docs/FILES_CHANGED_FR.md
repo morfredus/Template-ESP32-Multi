@@ -1,7 +1,7 @@
 # Fichiers Modifiés et Créés
 
-**Date de dernière mise à jour**: 13 janvier 2026  
-**Version**: 0.3.2
+**Date de dernière mise à jour**: 17 janvier 2026  
+**Version**: 0.4.0
 
 ---
 

@@ -170,11 +170,11 @@
 | **NeoPixel** | 48 | RTC_GPIO18 | OUTPUT | LED RGB (obligatoire) |
 | **Ecran SCK** | 12 | HSPI_CLK, SPI2_CLK, SCK | OUTPUT (SPI) | Horloge LCD |
 | **Ecran MOSI** | 11 | HSPI_MOSI, SPI2_MOSI, MOSI | OUTPUT (SPI) | Donnees LCD |
-| **Ecran MISO** | 13 | HSPI_MISO, SPI2_MISO, MISO | INPUT (SPI) | Donnees LCD (optionnel) |
+| **Ecran MISO** | 15 | HSPI_MISO, SPI2_MISO, MISO | INPUT (SPI) | Donnees LCD (optionnel) |
 | **Ecran CS** | 10 | HSPI_CS0, SPI2_CS0, CS | OUTPUT | Selection puce |
-| **Ecran DC** | 13 | HSPI_MISO, SPI2_MISO, MISO | OUTPUT | Donnees/Commande |
-| **Ecran RST** | 14 | MTMS, TMS, CLK | OUTPUT | Reinitialisation |
-| **Ecran BL** | 4 | RTC_GPIO4 | OUTPUT (PWM) | Retroeclairage |
+| **Ecran DC** | 17 | U0CTS | OUTPUT | Donnees/Commande |
+| **Ecran RST** | 18 | U0RTS | OUTPUT | Reinitialisation |
+| **Ecran BL** | 16 | RTC_GPIO16 | OUTPUT (PWM) | Retroeclairage |
 
 **Schema de Cablage :**
 ```
@@ -185,9 +185,9 @@
     GPIO12 (SCK) ─────────► SCK/CLK/SCLK
     GPIO11 (MOSI) ────────► SDA/DIN/MOSI
     GPIO10 (CS) ──────────► CS/CE/SS
-    GPIO13 (DC) ──────────► DC/RS/A0
-    GPIO14 (RST) ─────────► RST/RES/RESET
-    GPIO4  (BL) ──────────► BL/LED
+    GPIO17 (DC) ──────────► DC/RS/A0
+    GPIO18 (RST) ─────────► RST/RES/RESET
+    GPIO16 (BL) ──────────► BL/LED
 ```
 
 **Broches SPI utilisees :** 6 (HSPI/SPI2)

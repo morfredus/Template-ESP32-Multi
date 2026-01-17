@@ -1,7 +1,7 @@
 # 🎯 Refactorisation Modulaire - Résumé
 
-**Version**: 0.3.2  
-**Date**: 13 janvier 2026  
+**Version**: 0.4.0  
+**Date**: 17 janvier 2026  
 **État**: ✅ COMPLÉTÉ
 
 ---

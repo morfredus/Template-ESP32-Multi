@@ -14,7 +14,7 @@
 
 ## Environments
 - `esp32devkit`: classic ESP32 DevKit, no NeoPixel by default, LCD over VSPI (SCK 18, MOSI 23, CS 5, DC 16, RST 17, BL 4), buttons on 0/32/33.
-- `esp32s3_n16r8`: ESP32-S3 DevKitC-1 N16R8, NeoPixel on GPIO48, LCD SPI on 12/11/15 with CS 10, DC 13, RST 14, BL 4, buttons on 0/16/17.
+- `esp32s3_n16r8`: ESP32-S3 DevKitC-1 N16R8, NeoPixel on GPIO48, LCD SPI on 12/11/15 with CS 10, DC 17, RST 18, BL 16, buttons on 0/16/17.
 
 ## Add modules
 - Place common code in `src/` or `lib/`. Keep headers in `include/`.

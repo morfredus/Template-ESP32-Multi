@@ -1,16 +1,24 @@
 # Journal des changements
 
-## [0.4.0] - 2026-01-16
+## [0.4.0] - 2026-01-17
 ### Modifié
-- Mise à jour du pin mapping pour les deux environnements de développement
-- ESP32 DevKit: CS 15→5, RST 14→17, BL 27→4
-- ESP32-S3 N16R8: DC 9→13, RST 8→14, BL 7→4
-- Mise à jour de toute la documentation utilisateur pour refléter les nouvelles affectations de broches
+- Mise à jour du pin mapping pour les deux environnements de développement pour performances optimales
+- ESP32 DevKit: Aucun changement (configuration stable et vérifiée)
+- ESP32-S3 N16R8: Mise à jour des broches d'interface d'affichage
+  - Display DC: GPIO 17 (depuis GPIO 9)
+  - Display RST: GPIO 18 (depuis GPIO 8)
+  - Display BL: GPIO 16 (depuis GPIO 7)
+  - Display CS: GPIO 10, MOSI: GPIO 11, SCK: GPIO 12, MISO: GPIO 15
+- Toutes les assignations GPIO optimisées pour éviter conflits PSRAM sur N16R8
 
 ### Documentation
-- Mise à jour PIN_MAPPING.md et PIN_MAPPING_FR.md avec les nouvelles affectations GPIO
-- Mise à jour des schémas de câblage pour les deux cartes
-- Mise à jour de la version minimale requise à 0.4.0 dans la documentation du pin mapping
+- Mise à jour PIN_MAPPING_FR.md avec table ESP32-S3 corrigée et schéma de câblage
+- Mise à jour PIN_MAPPING.md avec table ESP32-S3 corrigée et schéma de câblage
+- Mise à jour USER_GUIDE_FR.md avec références GPIO précises pour ESP32-S3
+- Mise à jour USER_GUIDE.md avec références GPIO précises pour ESP32-S3
+- Mise à jour MODULAR_ARCHITECTURE_FR.md numéro de version en 0.4.0
+- Mise à jour MODULAR_ARCHITECTURE.md numéro de version en 0.4.0
+- Toute la documentation reflète désormais les définitions GPIO de board_config.h
 
 ## [0.3.4] - 2026-01-13
 ### Corrigé

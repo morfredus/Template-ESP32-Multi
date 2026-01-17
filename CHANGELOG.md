@@ -1,16 +1,24 @@
 # Changelog
 
-## [0.4.0] - 2026-01-16
+## [0.4.0] - 2026-01-17
 ### Changed
-- Updated pin mapping for both development environments
-- ESP32 DevKit: CS 15→5, RST 14→17, BL 27→4
-- ESP32-S3 N16R8: DC 9→13, RST 8→14, BL 7→4
-- Updated all user documentation to reflect new pin assignments
+- Updated pin mapping for both development environments for optimal performance
+- ESP32 DevKit: No changes (verified stable configuration)
+- ESP32-S3 N16R8: Updated display interface pins
+  - Display DC: GPIO 17 (from GPIO 9)
+  - Display RST: GPIO 18 (from GPIO 8)
+  - Display BL: GPIO 16 (from GPIO 7)
+  - Display CS: GPIO 10, MOSI: GPIO 11, SCK: GPIO 12, MISO: GPIO 15
+- All GPIO assignments optimized to avoid PSRAM conflicts on N16R8
 
 ### Documentation
-- Updated PIN_MAPPING.md and PIN_MAPPING_FR.md with new GPIO assignments
-- Updated wiring diagrams for both boards
-- Updated minimum version requirement to 0.4.0 in pin mapping documentation
+- Updated PIN_MAPPING.md with corrected ESP32-S3 table and wiring diagram
+- Updated PIN_MAPPING_FR.md with corrected ESP32-S3 table and wiring diagram
+- Updated USER_GUIDE.md with accurate GPIO references for ESP32-S3
+- Updated USER_GUIDE_FR.md with accurate GPIO references for ESP32-S3
+- Updated MODULAR_ARCHITECTURE.md version number to 0.4.0
+- Updated MODULAR_ARCHITECTURE_FR.md version number to 0.4.0
+- All documentation now reflects actual board_config.h GPIO definitions
 
 ## [0.3.4] - 2026-01-13
 ### Fixed
