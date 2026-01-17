@@ -1,7 +1,7 @@
 
 # Modular Documentation (ModularDocs)
 
-**Current version: 0.4.2**  
+**Current version: 0.4.3**
 *This documentation is designed to be accessible and educational for beginners.*
 
 This folder contains detailed, beginner-friendly documentation for each module of the ESP32 project. For a visual overview, see `modular_architecture_graphic.md`.

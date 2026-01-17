@@ -1,7 +1,7 @@
 
 # Guide Utilisateur (FR)
 
-> **Version minimum :** 0.4.2
+> **Version minimum :** 0.4.3
 
 > **La documentation technique complète de chaque module est disponible dans [ModularDocs/README_FR.md](../ModularDocs/README_FR.md). Toutes les fiches sont pédagogiques et incluent une section spéciale pour les débutants.**
 

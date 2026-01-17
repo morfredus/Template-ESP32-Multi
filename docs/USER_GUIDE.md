@@ -1,7 +1,7 @@
 
 # User Guide (EN)
 
-> **Minimum version:** 0.4.2
+> **Minimum version:** 0.4.3
 
 > **Full technical documentation for each module is available in [ModularDocs/README.md](../ModularDocs/README.md). All docs are beginner-friendly and include a dedicated section for newcomers.**
 

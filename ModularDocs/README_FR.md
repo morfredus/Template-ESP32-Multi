@@ -1,7 +1,7 @@
 
 # Documentation modulaire (ModularDocs)
 
-**Version actuelle : 0.4.2**  
+**Version actuelle : 0.4.3**
 *Cette documentation est conçue pour être accessible et pédagogique, même pour les débutants.*
 
 Ce dossier contient la documentation détaillée et pédagogique de chaque module du projet ESP32. Pour une vue d'ensemble graphique, voir `modular_architecture_graphic.md`.

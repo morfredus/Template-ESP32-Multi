@@ -5,7 +5,7 @@
 
 # Template ESP32 Multi-Environnements
 
-**Version actuelle : 0.4.2**  
+**Version actuelle : 0.4.3**
 *Ce projet met l'accent sur l'accessibilité aux débutants grâce à une documentation pédagogique et modulaire.*
 
 Template PlatformIO pour débutant couvrant ESP32 DevKit et ESP32-S3 DevKitC. Configuration centralisée, WiFiMulti, écran, boutons, NeoPixel optionnel et interface Web embarquée.

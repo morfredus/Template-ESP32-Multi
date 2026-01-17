@@ -1,6 +1,6 @@
 # Système d'écran LCD (FR)
 
-> **Version minimum :** 0.4.2
+> **Version minimum :** 0.4.3
 
 ## Vue d'ensemble
 Le template utilise un écran **Adafruit ST7789** 240×240 SPI avec la librairie Adafruit GFX. Trois écrans :
