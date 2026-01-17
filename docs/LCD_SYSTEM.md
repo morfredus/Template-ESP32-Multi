@@ -1,5 +1,7 @@
 # LCD System (EN)
 
+> **Minimum version:** 0.4.2
+
 ## Overview
 The template uses an **Adafruit ST7789** 240×240 SPI display with the Adafruit GFX library. The display shows three screens:
 1. **Boot screen** — Project name, version, progress bar
@@ -13,9 +15,12 @@ See [PIN_MAPPING.md](PIN_MAPPING.md) for GPIO assignments per board.
 Edit `include/config.h` to adjust:
 ```cpp
 .lcdRotation = 2,           // 0-3 (0=portrait, 2=landscape)
-.backlightLevel = 255,      // 0-255 (PWM duty)
+.backlightLevel = 255,      // 0-255 (PWM duty) - normal operation
+.bootBacklightLevel = 77,   // 0-255 (PWM duty) - during boot (~30% to reduce current)
 .enableBootBar = true,      // Show progress bar during boot
 ```
+
+**Power Management:** The display backlight starts at `bootBacklightLevel` (~30% brightness) during initialization to minimize current draw and prevent bootloops on weak USB ports. After boot completes, it gradually fades to `backlightLevel` over 500ms. This progressive power management avoids inrush current spikes.
 
 ## Boot Flow
 1. **Power-on** → ST7789 initialized, shows "Boot" with 5% bar

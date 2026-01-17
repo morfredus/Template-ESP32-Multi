@@ -1,5 +1,7 @@
 # Système d'écran LCD (FR)
 
+> **Version minimum :** 0.4.2
+
 ## Vue d'ensemble
 Le template utilise un écran **Adafruit ST7789** 240×240 SPI avec la librairie Adafruit GFX. Trois écrans :
 1. **Écran de boot** — Nom, version, barre de progression
@@ -13,9 +15,12 @@ Voir [PIN_MAPPING_FR.md](PIN_MAPPING_FR.md) pour les GPIO par carte.
 Éditer `include/config.h` :
 ```cpp
 .lcdRotation = 2,           // 0-3 (0=portrait, 2=paysage)
-.backlightLevel = 255,      // 0-255 (PWM)
+.backlightLevel = 255,      // 0-255 (PWM) - fonctionnement normal
+.bootBacklightLevel = 77,   // 0-255 (PWM) - durant le boot (~30% pour réduire le courant)
 .enableBootBar = true,      // Barre de progression au boot
 ```
+
+**Gestion de puissance :** Le rétroéclairage démarre à `bootBacklightLevel` (~30% de luminosité) durant l'initialisation pour minimiser le courant et éviter les bootloops sur ports USB faibles. Après le boot, il monte progressivement vers `backlightLevel` sur 500ms. Cette gestion progressive évite les pics de courant d'appel.
 
 ## Déroulement du boot
 1. **Démarrage** → ST7789 initialisé, affiche "Boot" 5%

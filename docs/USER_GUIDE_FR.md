@@ -1,6 +1,6 @@
 # Guide Utilisateur (FR)
 
-> **Version minimum :** 0.4.0
+> **Version minimum :** 0.4.2
 
 ## Dupliquer le template
 - Copier le dossier du depot puis le renommer.
@@ -34,7 +34,10 @@
 ## LCD
 - ST7789 via SPI + Adafruit GFX. Pas d'effacement plein ecran en boucle; mises a jour ciblees pour eviter le scintillement.
 - Barre de progression active par defaut; peut etre desactivee via `enableBootBar`.
-- Rtroeclairage par PWM LEDC; regler `backlightLevel` (0-255) dans `config.h`.
+- Rétroéclairage par PWM LEDC avec deux niveaux :
+  - `bootBacklightLevel` (défaut 77/255, ~30%) : luminosité réduite durant le boot pour minimiser le courant et éviter les bootloops sur ports USB faibles
+  - `backlightLevel` (défaut 255/255, 100%) : luminosité normale en fonctionnement, atteinte progressivement après le boot via fondu de 500ms
+- La gestion progressive de puissance évite les pics de courant d'appel durant l'initialisation.
 
 ## UI Web
 - Serveur `WebServer` integre sur le port 80.

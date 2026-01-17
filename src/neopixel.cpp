@@ -13,7 +13,7 @@ void init() {
   pixel.begin();
   pixel.clear();
   pixel.setBrightness(NEOPIXEL_BRIGHTNESS);
-  setColor(makeColor(0, 10, 50));  // Soft blue on startup
+  setColor(makeColor(0, 0, 0));  // Off during boot to save power
 }
 
 void setColor(uint32_t color) {

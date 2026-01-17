@@ -16,10 +16,17 @@ constexpr uint8_t kLedcChannel = 5;
 constexpr uint8_t kLedcResolution = 8;
 
 /**
- * Initialize the backlight with PWM control.
+ * Initialize the backlight with PWM control at boot level (low power).
  * If DISPLAY_BL_PIN is 255, skips initialization.
  */
 void initBacklight();
+
+/**
+ * Gradually increase backlight from boot level to normal operation level.
+ * This helps reduce inrush current after boot is complete.
+ * @param durationMs Duration of the fade transition in milliseconds
+ */
+void fadeBacklightToNormal(uint16_t durationMs = 500);
 
 /**
  * Initialize SPI and ST7789 display.
