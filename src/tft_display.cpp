@@ -18,7 +18,31 @@ void initBacklight() {
   }
   ledcSetup(kLedcChannel, 5000, kLedcResolution);
   ledcAttachPin(DISPLAY_BL_PIN, kLedcChannel);
-  ledcWrite(kLedcChannel, kTemplateConfig.backlightLevel);
+  // Start with reduced brightness to minimize current draw during boot
+  ledcWrite(kLedcChannel, kTemplateConfig.bootBacklightLevel);
+}
+
+void fadeBacklightToNormal(uint16_t durationMs) {
+  if (DISPLAY_BL_PIN == 255) {
+    return;
+  }
+  const uint8_t startLevel = kTemplateConfig.bootBacklightLevel;
+  const uint8_t endLevel = kTemplateConfig.backlightLevel;
+  if (startLevel == endLevel) {
+    return; // No fade needed
+  }
+  
+  const uint16_t steps = 50;
+  const uint16_t delayPerStep = durationMs / steps;
+  const int16_t delta = endLevel - startLevel;
+  
+  for (uint16_t i = 0; i <= steps; ++i) {
+    uint8_t level = startLevel + ((delta * i) / steps);
+    ledcWrite(kLedcChannel, level);
+    delay(delayPerStep);
+  }
+  // Ensure we end exactly at target level
+  ledcWrite(kLedcChannel, endLevel);
 }
 
 void setupDisplay() {
