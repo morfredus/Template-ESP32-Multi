@@ -1,3 +1,6 @@
+void loop() {
+  // Boucle principale vide ou à compléter selon besoins
+}
 #include <Arduino.h>
 #include <ArduinoOTA.h>
 
@@ -12,6 +15,7 @@
 #include "network.h"
 #include "web_server.h"
 #include "ui_state.h"
+#include "lcd1602.h"
 
 // Global UI state (declared in ui_state.cpp)
 extern UiState::State g_uiState;
@@ -29,69 +33,52 @@ void setup() {
   TftDisplay::setupDisplay();
   NeoPixel::init();
 
-  // Show WiFi connection progress
+  // Initialisation de l'écran LCD 1602 I2C
+  Lcd1602::begin(0x27, 16, 2);
+  Lcd1602::clear();
+  Lcd1602::print(projectName(), 0, 0);
+  Lcd1602::scrollText("WiFi...", 1, 100);
+
   TftDisplay::drawBootScreen("WiFi", 15);
   const bool wifiOk = Network::connectWifiWithFeedback();
   g_uiState.wifiConnected = wifiOk;
-  
-  // Initialize network services based on WiFi status
+
   if (wifiOk) {
+    Lcd1602::print(projectName(), 0, 0);
+    Lcd1602::scrollText("WiFi OK", 1, 100);
     TftDisplay::drawBootScreen("WiFi OK", 70);
     #if defined(ENV_ESP32S3_N16R8)
     NeoPixel::setColor(NeoPixel::makeColor(0, 80, 0));  // Green
     #endif
 
+    Lcd1602::print(projectName(), 0, 0);
+    Lcd1602::scrollText("mDNS...", 1, 100);
     TftDisplay::drawBootScreen("Starting mDNS", 75);
     g_uiState.mdnsOk = Network::initMdns();
-    
+
+    Lcd1602::print(projectName(), 0, 0);
+    Lcd1602::scrollText("OTA...", 1, 100);
     TftDisplay::drawBootScreen("Starting OTA", 80);
     Network::initOta();
-    
+
+    Lcd1602::print(projectName(), 0, 0);
+    Lcd1602::scrollText("Web...", 1, 100);
     TftDisplay::drawBootScreen("Starting web", 85);
     HttpServer::init();
+
+    // Affiche le nom du projet et l'adresse IP sur le LCD
+    Lcd1602::print(projectName(), 0, 0);
+    Lcd1602::scrollText(WiFi.localIP().toString().c_str(), 1, 100);
   } else {
+    Lcd1602::print(projectName(), 0, 0);
+    Lcd1602::scrollText("WiFi FAIL", 1, 100);
     TftDisplay::drawBootScreen("WiFi fail", 70);
     #if defined(ENV_ESP32S3_N16R8)
     NeoPixel::setColor(NeoPixel::makeColor(80, 0, 0));  // Red
     #endif
-    
+
     g_uiState.mdnsOk = false;
     Serial.println("[MAIN] Network services disabled (WiFi connection failed)");
   }
-
-  // Show ready screen
-  TftDisplay::drawBootScreen("Ready", 100);
-  delay(500);
-  
-  // Now that boot is complete, gradually increase backlight to normal level
-  // This reduces inrush current and prevents bootloop on weak USB ports
-  TftDisplay::fadeBacklightToNormal(500);
-  
-  TftDisplay::updateMainScreen(true);
-  
-  Serial.println("[MAIN] Setup complete!");
-}
-
-void loop() {
-  // Handle network and web requests
-  HttpServer::handleClient();
-  ArduinoOTA.handle();
-  
-  // Handle user input
-  Buttons::handle();
-
-  // Update UI periodically
-  const unsigned long now = millis();
-  if (now - g_uiState.lastUiRefresh > 1000) {
-    g_uiState.lastUiRefresh = now;
-    TftDisplay::updateMainScreen();
-    
-    // Update LED status
-    #if defined(ENV_ESP32S3_N16R8)
-    const uint32_t color = Network::isConnected() 
-      ? NeoPixel::makeColor(0, 30, 0)    // Green
-      : NeoPixel::makeColor(30, 0, 0);   // Red
-    NeoPixel::setColor(color);
-    #endif
-  }
+// ...fin du else précédent...
 }
