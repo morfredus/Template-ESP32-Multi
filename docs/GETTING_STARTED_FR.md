@@ -1,6 +1,6 @@
 # Démarrage rapide (FR)
 
-> **Version minimale valide :** 0.4.4
+> **Version minimale valide :** 0.1.1 (support Paper154 e-paper)
 
 ---
 

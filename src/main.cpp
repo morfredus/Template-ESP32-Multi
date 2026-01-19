@@ -17,6 +17,9 @@ void loop() {
 #include "ui_state.h"
 #include "lcd1602.h"
 
+#include "paper154.h"
+#include "secrets_wrapper.h"
+
 // Global UI state (declared in ui_state.cpp)
 extern UiState::State g_uiState;
 
@@ -33,15 +36,51 @@ void setup() {
   TftDisplay::setupDisplay();
   NeoPixel::init();
 
+  // Initialisation de l'écran e-paper 1.54'' (Paper154)
+  Paper154::begin();
+  // Rotation à gauche (quart de tour)
+  Paper154::setRotation(0); // 0 = 90° à gauche pour GxEPD2
+  Paper154::clear();
+  delay(500); // Laisse le temps à l'e-paper de s'initialiser et clear
+  Paper154::print("WAIT...", 20, 100); // Affichage test
+  delay(1500); // Laisse le temps de voir le message test
+
   // Initialisation de l'écran LCD 1602 I2C
   Lcd1602::begin(0x27, 16, 2);
-  Lcd1602::clear();
-  Lcd1602::print(projectName(), 0, 0);
   Lcd1602::scrollText("WiFi...", 1, 100);
+  // Rien sur e-paper ici, on attend la connexion WiFi pour afficher les infos structurées
 
   TftDisplay::drawBootScreen("WiFi", 15);
   const bool wifiOk = Network::connectWifiWithFeedback();
   g_uiState.wifiConnected = wifiOk;
+  // Affichage structuré sur e-paper après WiFi
+  Serial.print("[DEBUG] wifiOk = ");
+  Serial.println(wifiOk ? "true" : "false");
+  delay(1000); // Laisse le temps à l'e-paper de finir son cycle précédent
+  Serial.println("[DEBUG] Avant clear+drawStatusScreen");
+  Paper154::clear();
+  delay(500); // Laisse le temps au clear de s'afficher
+  if (wifiOk) {
+    Serial.println("[DEBUG] Appel drawStatusScreen (OK)");
+    Serial.print("[DEBUG] projectName: "); Serial.println(projectName());
+    Serial.print("[DEBUG] SSID: "); Serial.println(getWifiSsid(0));
+    Serial.print("[DEBUG] IP: "); Serial.println(WiFi.localIP());
+    Paper154::drawStatusScreen(
+      projectName(),
+      getWifiSsid(0),
+      WiFi.localIP().toString().c_str()
+    );
+    Serial.println("[DEBUG] Après drawStatusScreen (OK)");
+    Paper154::print("TEST", 20, 140); // Affichage test après drawStatusScreen
+    Paper154::print("AFTER", 20, 160); // Affichage test supplémentaire
+  } else {
+    Serial.println("[DEBUG] Appel drawStatusScreen (NO WIFI)");
+    Paper154::drawStatusScreen(projectName(), "-", "NO WIFI");
+    Serial.println("[DEBUG] Après drawStatusScreen (NO WIFI)");
+    Paper154::print("TEST", 20, 140); // Affichage test après drawStatusScreen
+    Paper154::print("AFTER", 20, 160); // Affichage test supplémentaire
+  }
+  delay(1500); // Laisse le temps à l'e-paper de rafraîchir
 
   if (wifiOk) {
     Lcd1602::print(projectName(), 0, 0);

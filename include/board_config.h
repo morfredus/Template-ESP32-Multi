@@ -54,6 +54,14 @@
 #define SD_SCLK_PIN   DISPLAY_SCK_PIN
 #define SD_CS_PIN     1   // CS SD — GPIO sûr
 
+// Définition du contrôleur pour écran 1.54" 200x200 (ex: GDEH0154D67)
+#define EPD_CS   DISPLAY_CS_PIN
+#define EPD_DC   DISPLAY_DC_PIN
+#define EPD_RST  DISPLAY_RST_PIN
+#define EPD_BUSY DISPLAY_BL_PIN
+#define EPD_RES  DISPLAY_RST_PIN
+#define EPD_SDA  DISPLAY_MOSI_PIN
+
 
 // ============================================================
 // GPS (UART1)

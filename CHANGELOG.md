@@ -1,3 +1,7 @@
+# 0.1.1 – 2026-01-19
+Added: Paper154 module for 1.54" 200x200 e-paper display (GDEH0154D67, GxEPD2)
+Added: English/French documentation for Paper154
+
 
 
 # Changelog

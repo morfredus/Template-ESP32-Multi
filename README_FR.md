@@ -38,6 +38,7 @@ Template PlatformIO pour débutant couvrant ESP32 DevKit et ESP32-S3 DevKitC. Co
 - Gestion du bouton BOOT (appui long = reboot) et deux boutons utilisateur
 - NeoPixel optionnel sur ESP32-S3 (GPIO48)
 - Configuration et pin mapping centralises
+- **NOUVEAU : module Paper154 pour écran e-paper 1.54" 200x200 (version min. 0.1.1)**
 
 ## Fichiers clefs
 - `include/config.h` — options utilisateur (mDNS, timeouts, affichage)
